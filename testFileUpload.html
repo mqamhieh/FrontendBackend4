@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+    <script type="text/javascript">
+        var formData = new FormData();
+        $(function() {
+            $("button").on("click", function () {
+                jQuery.ajax({
+                    url: "test.php",
+                    type: "POST",
+                    data: new FormData($("form")[0]),
+                    cache: false,
+                    processData: false,
+                    contentType: false,
+                    success: function (res) {
+                        jQuery('.result').html(res);
+                    }
+                });
+            });
+        });
+
+        var fileChanged = function (e) {
+            console.log(e.target.files[0]);
+        };
+
+        var allowDrop = function (e) {
+            e.preventDefault();
+        };
+
+        var dropFile = function (e) {
+            console.log(e.dataTransfer.files[0]);
+            var fr = new FileReader();
+
+            fr.onload = function () {
+                $(".droparea").css("background-image", "url(" + fr.result + ")");
+            };
+
+            formData = new FormData($("form")[0]);
+            formData.append("dragged_file", e.dataTransfer.files[0]);
+            formData.delete("myFile");
+
+            fr.readAsDataURL(e.dataTransfer.files[0]);
+
+            jQuery.ajax({
+                url: "test.php",
+                type: "POST",
+                data: formData,
+                cache: false,
+                processData: false,
+                contentType: false,
+                success: function (res) {
+                    jQuery('.result').html(res);
+                }
+            });
+            e.preventDefault();
+        };
+    </script>
+</head>
+<body>
+<form>
+    <div class="droparea" ondragover="allowDrop(event)"
+         ondrop="dropFile(event);"
+         style="height: 100px;background: #efefef;background-size:contain;background-repeat:no-repeat;"></div>
+    <input type="text" name="myField" value="test" />
+    <input type="file" name="myFile" onchange="fileChanged(event)" />
+    <div class="result"></div>
+    <button type="button">Go</button>
+</form>
+</body>
+</html>

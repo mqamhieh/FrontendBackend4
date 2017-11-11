@@ -1,0 +1,85 @@
+.form {
+    float: left;
+    width: 50%;
+    padding: 20px;
+}
+
+.form .droparea .on-file-dropped img.image_preview {
+    border: 1px solid #ccc;
+    padding: 3px;
+    border-radius: 5px;
+    width: 100%;
+
+}
+
+.form .droparea {
+    float: left;
+    width: 100%;
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    padding: 30px 0;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.form .droparea .on-file-dropped {
+    display: none;
+    padding: 0 20px;
+}
+
+.form .droparea.active-drop {
+    transform: scale(1.1);
+}
+
+.form .droparea button {
+    width: auto;
+    text-transform: none;
+}
+
+.form .saving {
+    display: none;
+}
+
+.form .field {
+    float: left;
+    width: 100%;
+    margin-bottom: 8px;
+}
+
+.form .field-label {
+    float: left;
+    width: 30%;
+    padding: 8px 0;
+}
+
+.form input:not([type='radio']):not([type='checkbox']),
+.form select
+{
+    width: 70%;
+    font-size: 16px;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form input:focus {
+    background: #eee;
+}
+
+.form .form-action {
+    text-align: center;
+    padding: 10px 0;
+}
+
+.form button {
+    background: #3c8dbc;
+    border: none;
+    color: white;
+    text-align: center;
+    padding: 11px;
+    width: 100px;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}

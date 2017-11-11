@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- <style>
+        @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+    </style> -->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="form.css" rel="stylesheet" type="text/css">
+    <link href="components-font-awesome/css/font-awesome.min.css"
+          rel="stylesheet" type="text/css">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1,max-scale=1,user-scalable=no">
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="logo float-left">
+            <div class="logo-text">
+                <span class="main">Admin</span><span>LTE</span>
+            </div>
+        </div>
+        <div class="top-menu float-left">
+            <div class="float-left">
+                <a href="javascript:" class="menu-icon">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+            <div class="user-menu float-right">
+                <a href="javascript:" class="settings-icon float-right">
+                    <i class="fa fa-gears"></i>
+                </a>
+                <div class="user-photo float-right">
+                    <div class="user-img"
+                         style="background-image: url('images/user-icon.png')"></div>
+                    Alexander Pierce
+                </div>
+                <div class="notifications float-right">
+                    <div class="notification float-right danger">
+                        <i class="fa fa-envelope-o"></i>
+                        <span class="count">6</span>
+                    </div>
+                    <div class="notification float-right warning">
+                        <i class="fa fa-flag-o"></i>
+                        <span class="count">15</span>
+                    </div>
+                    <div class="notification float-right success">
+                        <i class="fa fa-bell-o"></i>
+                        <span class="count">10</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </header>
+    <div class="page-content">
+        <div class="menu">
+            <div class="user-info">
+                <div class="user-status">
+                    <div class="user-photo float-left">
+                        <div class="user-img"
+                             style="background-image: url('images/user-icon.png')"></div>
+                    </div>
+                    <div class="user-details float-left">
+                        <div class="user-name">Alexander Pierce</div>
+                        <div class="status">
+                            <i class="fa fa-circle online"></i>
+                            <span>Online</span>
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+                <div class="search-container">
+                    <input type="search"
+                           class="search-input"
+                           name="search"
+                           placeholder="Search ...">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+            <div class="main-navigation">
+                <h2>Main Navigation</h2>
+                <ul class="main-menu">
+                    <li>
+                        <a href="javascript:">
+                            <i class="fa fa-dashboard menu-icon"></i>
+                            Dashboard
+                            <i class="fa fa-chevron-right arrow-icon"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:">
+                                    <i class="fa fa-circle-o menu-icon"></i>
+                                    Dashboard 1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:">
+                                    <i class="fa fa-circle-o menu-icon"></i>
+                                    Dashboard 2
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:">
+                            <i class="fa fa-copy menu-icon"></i>
+                            Layout Options
+                            <span class="sub-msg primary">4</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:">
+                            <i class="fa fa-th menu-icon"></i>
+                            Widgets
+                            <span class="sub-msg success">new</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="javascript:">
+                            <i class="fa fa-pie-chart menu-icon"></i>
+                            Charts
+                            <i class="fa fa-chevron-right arrow-icon"></i>
+                        </a>
+                        <ul>
+                            <li>
+                                <a href="javascript:">
+                                    <i class="fa fa-circle-o menu-icon"></i>
+                                    Chart 1
+                                </a>
+                            </li>
+                            <li>
+                                <a href="javascript:">
+                                    <i class="fa fa-circle-o menu-icon"></i>
+                                    Chart 2
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="main-content float-left">
+           <div class="inner-content">
+               <form class="form"
+                     action="test.php"
+                     target="_self"
+                     novalidate
+                     enctype="multipart/form-data"
+                     method="POST">
+                   <div class="field">
+                       <label class="field-label">User Name</label>
+                       <input type="text"
+                              required
+                              placeholder="User Name"
+                              name="username" />
+                   </div>
+                   <div class="field">
+                       <label class="field-label">Password</label>
+                       <input type="password"
+                              required
+                              placeholder="Your Password"
+                              name="password" />
+                   </div>
+                   <div class="field">
+                       <label class="field-label">Phone</label>
+                       <input type="tel"
+                              required
+                              placeholder="e.g. 0599******"
+                              name="phone" />
+                   </div>
+                   <div class="field">
+                       <label class="field-label">Account Type:</label>
+                       <label>
+                           <input type="radio"
+                                  value="student"
+                                  name="account_type" />
+                           Student
+                       </label>
+                       <label>
+                           <input type="radio"
+                                  value="teacher"
+                                  name="account_type" />
+                           Teacher
+                       </label>
+                   </div>
+                   <div class="field">
+                       <label class="field-label">
+                           Select Type
+                       </label>
+                       <select name="select_type">
+                           <option value="" style="display:none;">Please select type</option>
+                           <option value="1">Option 1</option>
+                           <option value="2">Option 2</option>
+                           <option value="3">Option 3</option>
+                       </select>
+                   </div>
+                   <div class="field">
+                       <label class="field-label">Profile Picture</label>
+                       <input type="file"
+                              name="profile_picture" />
+                   </div>
+                   <div class="field">
+                       <label>
+                           <input type="checkbox"
+                                  value="true"
+                                  name="terms"
+                                   />
+                           I agree on terms and conditions.
+                       </label>
+                   </div>
+                   <div class="clear"></div>
+                   <div class="form-action">
+                       <button type="submit">
+                           Register
+                       </button>
+                   </div>
+               </form>
+               <form class="form"
+                     id="ajax_form"
+                     action="test.php"
+                     target="_blank"
+                     onsubmit="return onFormSave(event)"
+                     novalidate
+                     method="POST">
+                   <div class="saving">
+                       <i class="fa fa-gear fa-spin"></i>
+                       Uploading ...
+                   </div>
+                   <div class="inner-form">
+                       <div class="field">
+                           <label class="field-label">User Name</label>
+                           <input type="text"
+                                  required
+                                  placeholder="User Name"
+                                  name="username" />
+                       </div>
+                       <div class="field">
+                           <label class="field-label">Password</label>
+                           <input type="password"
+                                  required
+                                  placeholder="Your Password"
+                                  name="password" />
+                       </div>
+                       <div class="field">
+                           <label class="field-label">Phone</label>
+                           <input type="tel"
+                                  required
+                                  placeholder="e.g. 0599******"
+                                  name="phone" />
+                       </div>
+                       <div class="field">
+                           <label class="field-label">Account Type:</label>
+                           <label>
+                               <input type="radio"
+                                      value="student"
+                                      name="account_type" />
+                               Student
+                           </label>
+                           <label>
+                               <input type="radio"
+                                      value="teacher"
+                                      name="account_type" />
+                               Teacher
+                           </label>
+                       </div>
+                       <div class="field">
+                           <label class="field-label">
+                               Select Type
+                           </label>
+                           <select name="select_type">
+                               <option value="" style="display:none;">Please select type</option>
+                               <option value="1">Option 1</option>
+                               <option value="2">Option 2</option>
+                               <option value="3">Option 3</option>
+                           </select>
+                       </div>
+                       <div class="field">
+                           <label>
+                               <input type="checkbox"
+                                      value="true"
+                                      name="terms"
+                                       />
+                               I agree on terms and conditions.
+                           </label>
+                       </div>
+                       <div class="droparea"
+                            ondrop="onFileDrop(event)"
+                            ondragleave="onDragLeave()"
+                            ondragover="allowDrop(event)">
+                           <div class="drop-content">
+                               Please Drop Your Files Here
+                               or <button type="button"
+                                          onclick="openFileBrowser()"
+                                   >Select a File</button>
+                               <input type="file"
+                                      style="display:none;"
+                                      onchange="onFileSelected(event)"
+                                      id="file_select" />
+                           </div>
+                           <div class="on-file-dropped">
+                               <img class="image_preview" />
+                               <canvas id="my-canvas">
+                               </canvas>
+                               Selected File:
+                               <span></span>
+                           </div>
+                       </div>
+                       <div class="clear"></div>
+                       <div class="form-action">
+                           <button type="submit">
+                               Register
+                           </button>
+                       </div>
+                   </div>
+               </form>
+               <div class="clear"></div>
+           </div>
+
+            <div>
+                <button onclick="setAhmad()">
+                    Set Ahmad
+                </button>
+                <button onclick="logAhmad()">
+                    Log Ahmad
+                </button>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+    var x;
+
+    var setAhmad = function () {
+        sessionStorage['x'] = 'ahmad';
+    };
+
+    var logAhmad = function () {
+        alert(sessionStorage['x']);
+    };
+
+</script>
+<script type="text/javascript" src="jquery-3.2.1.min.js"></script>
+<script type="text/javascript" src="validation.js"></script>
+<script type="text/javascript" src="dragdrop.js"></script>
+</body>
+</html>
