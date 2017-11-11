@@ -333,14 +333,44 @@
 
 <script type="text/javascript">
 
-    var x;
+    var setCookie = function (key, value, expiryInSeconds) {
+        // If a number, use it. Else set to 2 days by default
+        expiryInSeconds = isNaN(expiryInSeconds)? (2 * 24 * 60 * 60): parseInt(expiryInSeconds);
+        // Current timestamp
+        var currentDate = Date.now();
+        // Convert seconds into miliiseconds, and add it to current timestamp.
+        var expiryTimestap = currentDate + (expiryInSeconds * 1000);
+        // Create a new object from the timestamp (now + expireyInSeconds)
+        var expiryDate = new Date(expiryTimestap);
 
-    var setAhmad = function () {
-        sessionStorage['x'] = 'ahmad';
+        // Convert date as UTC date string (Not ISO)
+        document.cookie = key + "=" + JSON.stringify(value) + "; expires=" + expiryDate.toUTCString() + "; path=/;";
     };
 
-    var logAhmad = function () {
-        alert(sessionStorage['x']);
+    var deleteCookie = function (key) {
+        // Set cookie with expiry in past (-1 second)
+        setCookie(key, null, -1);
+    };
+
+    /**
+     * get cookie from a string like
+     * key1=value; key2=value; key3=value
+     */
+    var getCookie = function (key) {
+        var cookies = document.cookie;
+        var cookiesParts = cookies.split(";");
+
+        for (var i in cookiesParts) {
+            var cookie = cookiesParts[i].trim().split("=");
+            if (cookie[0] == key) {
+                try {
+                    return JSON.parse(cookie[1]);
+                }
+                catch (e) {
+                    return cookie[1];
+                }
+            }
+        }
     };
 
 </script>
